@@ -1,3 +1,5 @@
+import { Sequelize } from "sequelize/types";
+
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
@@ -16,6 +18,8 @@ then(() => {
   console.log('connected to the database');
 });
 
+// await sequelize.sync({ force: true });
+// console.log("All models were synchronized successfully.")
 
 app.get("/", (req, res, next) => {
     res.send(layout('hellohello'));
